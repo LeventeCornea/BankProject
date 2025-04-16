@@ -15,4 +15,10 @@ public class OpenAccountPage {
     public void selectCustomerName(String fullNameValue){
         elementHelper.selectLocator(OpenAccountLocators.customerNameElement, fullNameValue);
     }
+    public void selectCurrency(String currencyValue){
+        elementHelper.selectLocator(OpenAccountLocators.currencyElement, currencyValue);
+    }
+    public void selectButton(){
+        elementHelper.clickLocator(OpenAccountLocators.processButton);
+    }
 }
