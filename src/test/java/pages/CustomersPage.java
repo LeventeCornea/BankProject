@@ -1,5 +1,6 @@
 package pages;
 
+import helpMethods.AlertHelper;
 import helpMethods.ElementHelper;
 import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import static pageLocators.AddCustomersLocators.firstNameElement;
 public class CustomersPage {
     private WebDriver driver;
     private ElementHelper elementHelper;
+    private AlertHelper alertHelper;
 
     public CustomersPage(WebDriver driver){
         this.driver = driver;
@@ -30,5 +32,7 @@ public class CustomersPage {
     public void deleteCustomer(){
         elementHelper.clickJSLocator(CustomersLocators.deleteButton);
         LoggerUtility.infoTest("The user is deleted");
+        alertHelper.acceptAlert();
+        LoggerUtility.infoTest("The user clicked on accept alert");
     }
 }

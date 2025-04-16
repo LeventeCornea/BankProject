@@ -1,5 +1,6 @@
 package pages;
 
+import helpMethods.AlertHelper;
 import helpMethods.ElementHelper;
 import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
@@ -10,10 +11,12 @@ import static pageLocators.AddCustomersLocators.*;
 public class AddCustomerPage {
     private WebDriver driver;
     private ElementHelper elementHelper;
+    private AlertHelper alertHelper;
 
     public AddCustomerPage(WebDriver driver){
         this.driver = driver;
         elementHelper = new ElementHelper(driver);
+        alertHelper = new AlertHelper(driver);
     }
     public void fillFirstName(String firstNameValue){
         elementHelper.fillLocator(firstNameElement, firstNameValue);
@@ -30,5 +33,7 @@ public class AddCustomerPage {
     public void clickAddCustomerButton(){
         elementHelper.clickLocator(addCustomerButton);
         LoggerUtility.infoTest("The user clicked on add customer button");
+        alertHelper.acceptAlert();
+        LoggerUtility.infoTest("The user clicked on accept alert");
     }
 }

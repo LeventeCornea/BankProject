@@ -4,12 +4,10 @@ import org.testng.annotations.Test;
 import pages.*;
 import sharedData.SharedData;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
-public class BankManagerTest extends SharedData {
+public class CreateCustomerWithAccountTest extends SharedData {
 
     @Test
     public void testMethod() throws AWTException{

@@ -18,10 +18,6 @@ public class ElementHelper {
     public ElementHelper(WebDriver driver){
         this.driver = driver;
     }
-    public void waitForElementVisible(WebElement locator){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(locator));
-    }
     public void waitForElementVisible(By locator){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -34,10 +30,6 @@ public class ElementHelper {
         waitForElementVisible(locator);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", driver.findElement(locator));
-    }
-    public void clickJSLocator(WebElement locator){
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", locator);
     }
     public void fillLocator(By locator, String value) {
         waitForElementVisible(locator);
